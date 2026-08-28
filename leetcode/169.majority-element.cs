@@ -44,7 +44,16 @@
 // @lc code=start
 public class Solution {
     public int MajorityElement(int[] nums) {
-        
+        int count = 0, currElement = -1;
+        for (int i = 0; i<nums.Length; i++)
+        {
+            if (count == 0)
+            {
+                currElement = nums[i];
+            }
+            count += currElement == nums[i] ? 1 : -1; 
+        }
+        return currElement;
     }
 }
 // @lc code=end
